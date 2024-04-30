@@ -5,7 +5,7 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-// Swinig -> 배치 관리자 : FlowLayout 
+// Swinig 의 배치 관리자 : FlowLayout 
 // 컴포넌트들을 (버튼, 라벨) 등을 수평, 수직으로 배치를 해주는 클래스 이다. 
 public class FlowLayoutEx extends JFrame {
 
