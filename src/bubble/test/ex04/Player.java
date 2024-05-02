@@ -1,31 +1,11 @@
-package bubble.test.ex03;
+package bubble.test.ex04;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+
 public class Player extends JLabel implements Moveable {
 
-	private int x;
-	private int y;
-	private ImageIcon playerR, playerL;
-	
-	// 움직임의 상태
-	private boolean left; 
-	private boolean right; 
-	private boolean up;
-	private boolean down;
-	
-	// 플레이어 속도 상태 
-	private final int SPEED = 4; 
-	private final int JUMPSPEED = 2; 
-	
-	// setter 
-	
-		
-	public void setLeft(boolean left) {
-		this.left = left;
-	}
-	
 	public int getX() {
 		return x;
 	}
@@ -74,6 +54,22 @@ public class Player extends JLabel implements Moveable {
 		this.down = down;
 	}
 
+	public boolean isLeftWallCrash() {
+		return leftWallCrash;
+	}
+
+	public void setLeftWallCrash(boolean leftWallCrash) {
+		this.leftWallCrash = leftWallCrash;
+	}
+
+	public boolean isRightWallCrash() {
+		return rightWallCrash;
+	}
+
+	public void setRightWallCrash(boolean rightWallCrash) {
+		this.rightWallCrash = rightWallCrash;
+	}
+
 	public boolean isLeft() {
 		return left;
 	}
@@ -90,6 +86,30 @@ public class Player extends JLabel implements Moveable {
 		return JUMPSPEED;
 	}
 
+	private int x;
+	private int y;
+	private ImageIcon playerR, playerL;
+	
+	// 움직임의 상태
+	private boolean left; 
+	private boolean right; 
+	private boolean up;
+	private boolean down;
+	
+	// 벽에 충돌한 상태
+	private boolean leftWallCrash;
+	private boolean rightWallCrash;
+	
+	
+	// 플레이어 속도 상태 
+	private final int SPEED = 4; 
+	private final int JUMPSPEED = 2; 
+	
+	// setter 
+	public void setLeft(boolean left) {
+		this.left = left;
+	}
+	
 	public void setRight(boolean right) {
 		this.right = right;
 	}
@@ -101,8 +121,8 @@ public class Player extends JLabel implements Moveable {
 	}
 
 	private void initData() {
-		playerR = new ImageIcon("images/playerR.png");
-		playerL = new ImageIcon("images/playerL.png");
+		playerR = new ImageIcon("img/playerR.png");
+		playerL = new ImageIcon("img/playerL.png");
 
 		// 처음 실행 시 초기 값 셋팅
 		x = 450;
@@ -114,12 +134,17 @@ public class Player extends JLabel implements Moveable {
 		up = false;
 		down = false;
 		
-		setIcon(playerR);
-		setSize(50, 50);
-		setLocation(x, y);
+		leftWallCrash = false;
+		rightWallCrash = false;
+		
+		
 	}
 
 	private void setInitLayout() {
+		setIcon(playerR);
+		setSize(50, 50);
+		setLocation(x, y);
+		
 	}
 
 	@Override

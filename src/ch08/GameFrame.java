@@ -23,6 +23,9 @@ public class GameFrame extends JFrame {
 	int playerY = 300;
 	int enemyX = 250;
 	int enemyY = 420;
+	
+	private boolean flag;
+	
 
 	public GameFrame() {
 		initData();
@@ -52,11 +55,10 @@ public class GameFrame extends JFrame {
 			// true : 왼쪽으로 가는 상황
 			// false : 오른쪽으로 가는 상황
 			Boolean direction = true;
-			Boolean flag = true;
 
 			while (true) {
 				System.out.println("진행중");
-
+				flag = true;
 				if (direction) {
 					enemyX -= 10;
 				} else {
@@ -75,7 +77,6 @@ public class GameFrame extends JFrame {
 					Thread.sleep(50);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
-					flag = false;
 				}
 				repaint();
 			}
@@ -84,6 +85,8 @@ public class GameFrame extends JFrame {
 	}
 
 	private void initData() {
+		
+		
 		setTitle("Thread 활용한 미니 예제");
 		setSize(600, 600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
