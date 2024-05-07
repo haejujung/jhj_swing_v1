@@ -1,4 +1,4 @@
-package jhj_bubble.test.ex03;
+package jhj_bubble.test.ex04;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
