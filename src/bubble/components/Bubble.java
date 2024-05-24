@@ -6,6 +6,7 @@ import javax.swing.JLabel;
 import bubble.BubbleFrame;
 import bubble.intercaces.Moveable;
 import bubble.service.BackgroundBubbleService;
+import gomoku.Player;
 
 public class Bubble extends JLabel implements Moveable {
 

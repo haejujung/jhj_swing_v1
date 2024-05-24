@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 import bubble.components.Enemy;
-import bubble.components.Player;
+import gomoku.Player;
 
 public class BubbleFrame extends JFrame {
 	
